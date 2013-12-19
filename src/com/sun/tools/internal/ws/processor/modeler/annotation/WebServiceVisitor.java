@@ -559,14 +559,7 @@ public abstract class WebServiceVisitor extends SimpleDeclarationVisitor impleme
     }
 
     protected boolean isLegalSEI(InterfaceDeclaration intf) {
-        for (FieldDeclaration field : intf.getFields())
-            if (field.getConstantValue() != null) {
-                builder.onError(WebserviceapMessages.WEBSERVICEAP_SEI_CANNOT_CONTAIN_CONSTANT_VALUES(intf.getQualifiedName(), field.getSimpleName()));
-                return false;
-            }
-        if (!methodsAreLegal(intf))
-            return false;
-        return true;
+        return methodsAreLegal(intf);
     }
 
     protected boolean methodsAreLegal(InterfaceDeclaration intfDecl) {
