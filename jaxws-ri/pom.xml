@@ -84,16 +84,19 @@
     </mailingLists>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>jvnet-nexus-snapshots</id>
-            <uniqueVersion>false</uniqueVersion>
-            <url>https://maven.java.net/content/repositories/snapshots/</url>
-        </snapshotRepository>
+        <!-- Publish releases here -->
         <repository>
-            <id>jvnet-nexus-staging</id>
-            <name>Java.net Nexus Staging Repository</name>
-            <url>https://maven.java.net/service/local/staging/deploy/maven2/</url>
+            <id>energysuite-nexus</id>
+            <name>Energy Suit Nexus</name>
+            <url>${energysuite-nexus.base.url}/nexus/content/repositories/releases</url>
         </repository>
+
+        <!-- Publish snapshots here -->
+        <snapshotRepository>
+            <id>energysuite-nexus</id>
+            <name>Energy Suit Nexus</name>
+            <url>${energysuite-nexus.base.url}/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <repositories>
@@ -143,6 +146,7 @@
         <findbugs.exclude/>
         <findbugs.version>3.0.1</findbugs.version>
         <netbeans.hint.jdkPlatform>JDK_1.6</netbeans.hint.jdkPlatform>
+        <energysuite-nexus.base.url>http://dev.ifactornotifi.com</energysuite-nexus.base.url>
     </properties>
 
     <build>
