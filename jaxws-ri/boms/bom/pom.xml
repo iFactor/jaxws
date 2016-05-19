@@ -115,7 +115,24 @@
         <woodstox-core-asl.version>4.2.0</woodstox-core-asl.version>       
         <stax2-api.version>3.1.1</stax2-api.version>
         <javax.annotation-api.version>1.2</javax.annotation-api.version>
+        <energysuite-nexus.base.url>http://dev.ifactornotifi.com</energysuite-nexus.base.url>
     </properties>
+
+    <distributionManagement>
+        <!-- Publish releases here -->
+        <repository>
+            <id>energysuite-nexus</id>
+            <name>Energy Suit Nexus</name>
+            <url>${energysuite-nexus.base.url}/nexus/content/repositories/releases</url>
+        </repository>
+
+        <!-- Publish snapshots here -->
+        <snapshotRepository>
+            <id>energysuite-nexus</id>
+            <name>Energy Suit Nexus</name>
+            <url>${energysuite-nexus.base.url}/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
     
     <dependencyManagement>
         <dependencies>

@@ -47,15 +47,35 @@
     <parent>
         <groupId>com.sun.xml.ws</groupId>
         <artifactId>bundles</artifactId>
-        <version>2.2.10</version>
+        <version>2.2.11-KUBRA</version>
     </parent>
 
     <groupId>com.sun.xml.ws</groupId>
     <artifactId>jaxws-rt</artifactId>
-    <version>2.2.10</version>
+    <version>2.2.11-KUBRA</version>
     
     <packaging>pom</packaging>
     <name>JAX-WS RI Runtime Bundle</name>
+
+    <properties>
+        <energysuite-nexus.base.url>http://dev.ifactornotifi.com</energysuite-nexus.base.url>
+    </properties>
+
+    <distributionManagement>
+        <!-- Publish releases here -->
+        <repository>
+            <id>energysuite-nexus</id>
+            <name>Energy Suit Nexus</name>
+            <url>${energysuite-nexus.base.url}/nexus/content/repositories/releases</url>
+        </repository>
+
+        <!-- Publish snapshots here -->
+        <snapshotRepository>
+            <id>energysuite-nexus</id>
+            <name>Energy Suit Nexus</name>
+            <url>${energysuite-nexus.base.url}/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
